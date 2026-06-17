@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings | Stackly</title>
+
+<link rel="stylesheet" href="css/user-dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+<div class="logo">
+<a href="index.html"><img src="./assets/logo.webp" alt="Stackly Logo" style="height: 40px; width: auto; vertical-align: middle;"></a>
+</div>
+<ul>
+
+<li  onclick="location.href='user-dashboard.html'">
+<i class="fas fa-home"></i>
+Dashboard
+</li>
+
+<li  onclick="location.href='user-profile.html'">
+<i class="fas fa-user"></i>
+Profile
+</li>
+
+<li  onclick="location.href='user-appointments.html'">
+<i class="fas fa-calendar-check"></i>
+Appointments
+</li>
+
+<li  onclick="location.href='user-programs.html'">
+<i class="fas fa-dumbbell"></i>
+Programs
+</li>
+
+<li  onclick="location.href='user-progress.html'">
+<i class="fas fa-chart-line"></i>
+Progress
+</li>
+
+<li class="active" onclick="location.href='user-settings.html'">
+<i class="fas fa-cog"></i>
+Settings
+</li>
+
+<li onclick="logout()">
+<i class="fas fa-sign-out-alt"></i>
+Logout
+</li>
+</ul>
+</aside>
+
+<!-- Main Content -->
+
+<main class="main-content">
+<div class="topbar">
+<i class="fas fa-bars dashboard-menu-btn" style="display:none; font-size: 24px; color: var(--primary); cursor: pointer; margin-right: 15px;"></i>
+<div>
+<h1>Account Settings</h1>
+<p>Manage your account preferences and security.</p>
+</div>
+<div class="profile">
+<img src="./assets/img_11c69897.webp">
+<div><h4>Sarah Johnson</h4><p>Premium Member</p></div>
+</div>
+</div>
+
+<div class="settings-container" style="margin-top:30px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+<div style="background:white; padding:20px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.08);">
+<h2>Notification Preferences</h2>
+<ul style="list-style:none; padding:0; margin-top:20px;">
+<li style="display:flex; justify-content:space-between; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;"><span>Email Notifications</span> <input type="checkbox" checked style="width:20px; height:20px;"></li>
+<li style="display:flex; justify-content:space-between; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;"><span>SMS Alerts</span> <input type="checkbox" checked style="width:20px; height:20px;"></li>
+<li style="display:flex; justify-content:space-between; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;"><span>Weekly Progress Report</span> <input type="checkbox" checked style="width:20px; height:20px;"></li>
+</ul>
+</div>
+
+<div style="background:white; padding:20px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.08);">
+<h2>Security Settings</h2>
+<div style="margin-top:20px;">
+<div style="margin-bottom:15px;"><label style="display:block; margin-bottom:5px; font-weight:bold;">Current Password</label><input type="password" placeholder="********" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;"></div>
+<div style="margin-bottom:15px;"><label style="display:block; margin-bottom:5px; font-weight:bold;">New Password</label><input type="password" placeholder="********" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;"></div>
+<button style="padding:10px 20px;background:var(--primary);color:white;border:none;border-radius:6px;cursor:pointer;">Update Password</button>
+</div>
+</div>
+</div>
+</main>
+
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

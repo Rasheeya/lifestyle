@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | Stackly</title>
+
+<link rel="stylesheet" href="css/admin-dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+<a href="index.html"><img src="./assets/logo.webp" alt="Stackly Logo" style="height: 40px; width: auto; vertical-align: middle;"></a>
+</div>
+
+<ul>
+
+<li class="active" onclick="location.href='admin-dashboard.html'">
+<i class="fas fa-chart-line"></i>
+Dashboard
+</li>
+
+<li onclick="location.href='admin-users.html'">
+<i class="fas fa-users"></i>
+Users
+</li>
+
+<li onclick="location.href='admin-appointments.html'">
+<i class="fas fa-calendar-check"></i>
+Appointments
+</li>
+
+<li onclick="location.href='admin-blogs.html'">
+<i class="fas fa-blog"></i>
+Blogs
+</li>
+
+<li onclick="location.href='admin-testimonials.html'">
+<i class="fas fa-comment"></i>
+Testimonials
+</li>
+
+<li onclick="location.href='admin-messages.html'">
+<i class="fas fa-envelope"></i>
+Messages
+</li>
+
+<li onclick="location.href='admin-settings.html'">
+<i class="fas fa-cog"></i>
+Settings
+</li>
+
+<li onclick="logout()">
+<i class="fas fa-sign-out-alt"></i>
+Logout
+</li>
+
+</ul>
+
+</aside>
+
+<!-- Main -->
+
+<main class="main-content">
+
+<!-- Topbar -->
+
+<div class="topbar">
+<i class="fas fa-bars dashboard-menu-btn" style="display:none; font-size: 24px; color: var(--primary); cursor: pointer; margin-right: 15px;"></i>
+
+<div>
+<h1>Admin Dashboard</h1>
+<p>Welcome Back Admin 👋</p>
+</div>
+
+<div class="admin-profile">
+
+<img src="./assets/img_83fcd62a.webp">
+
+<div>
+<h4>Admin</h4>
+<p>Administrator</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- Stats -->
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<div class="icon">
+<i class="fas fa-users"></i>
+</div>
+
+<h2>1,250</h2>
+<p>Total Users</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon">
+<i class="fas fa-calendar-check"></i>
+</div>
+
+<h2>320</h2>
+<p>Appointments</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon">
+<i class="fas fa-heart"></i>
+</div>
+
+<h2>780</h2>
+<p>Programs</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon">
+<i class="fas fa-dollar-sign"></i>
+</div>
+
+<h2>$12,500</h2>
+<p>Revenue</p>
+
+</div>
+
+</div>
+
+<!-- Chart -->
+
+<div class="chart-section">
+
+<h2>Revenue Analytics</h2>
+
+<div class="chart-placeholder">
+
+<div class="bar b1"></div>
+<div class="bar b2"></div>
+<div class="bar b3"></div>
+<div class="bar b4"></div>
+<div class="bar b5"></div>
+<div class="bar b6"></div>
+
+</div>
+
+</div>
+
+<!-- Tables -->
+
+<div class="content-grid">
+
+<div class="table-card">
+
+<h2>Recent Users</h2>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Sarah</td>
+<td>sarah@gmail.com</td>
+<td><span class="active-user">Active</span></td>
+</tr>
+
+<tr>
+<td>James</td>
+<td>james@gmail.com</td>
+<td><span class="active-user">Active</span></td>
+</tr>
+
+<tr>
+<td>Emily</td>
+<td>emily@gmail.com</td>
+<td><span class="inactive-user">Pending</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="notification-card">
+
+<h2>Notifications</h2>
+
+<div class="notify">
+New User Registered
+</div>
+
+<div class="notify">
+New Appointment Booked
+</div>
+
+<div class="notify">
+Blog Post Published
+</div>
+
+<div class="notify">
+Payment Received
+</div>
+
+</div>
+
+</div>
+
+<!-- Activity -->
+
+<div class="activity-card">
+
+<h2>Recent Activity</h2>
+
+<ul>
+
+<li>
+✔ Sarah joined Weight Loss Program
+</li>
+
+<li>
+✔ New Blog Published
+</li>
+
+<li>
+✔ Appointment Confirmed
+</li>
+
+<li>
+✔ Payment Completed
+</li>
+
+</ul>
+
+</div>
+
+<!-- Appointments -->
+<div class="table-card" style="margin-top: 30px;">
+
+<h2>Recent Appointments</h2>
+
+<table>
+
+<tr>
+<th>Client Name</th>
+<th>Date</th>
+<th>Time</th>
+<th>Service</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>John Doe</td>
+<td>Oct 12, 2023</td>
+<td>10:00 AM</td>
+<td>Diet Consultation</td>
+<td><span class="active-user">Confirmed</span></td>
+</tr>
+
+<tr>
+<td>Jane Smith</td>
+<td>Oct 13, 2023</td>
+<td>02:30 PM</td>
+<td>Workout Plan</td>
+<td><span class="inactive-user">Pending</span></td>
+</tr>
+
+<tr>
+<td>Michael Johnson</td>
+<td>Oct 14, 2023</td>
+<td>11:00 AM</td>
+<td>Therapy Session</td>
+<td><span class="active-user">Confirmed</span></td>
+</tr>
+
+<tr>
+<td>Emily Davis</td>
+<td>Oct 15, 2023</td>
+<td>09:00 AM</td>
+<td>Follow-up</td>
+<td><span class="active-user">Confirmed</span></td>
+</tr>
+
+<tr>
+<td>Chris Lee</td>
+<td>Oct 16, 2023</td>
+<td>04:00 PM</td>
+<td>Diet Consultation</td>
+<td><span class="inactive-user">Pending</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- Blogs -->
+<div class="table-card" style="margin-top: 30px;">
+
+<h2>Recent Blogs</h2>
+
+<table>
+
+<tr>
+<th>Title</th>
+<th>Author</th>
+<th>Date Published</th>
+<th>Views</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>10 Tips for Healthy Eating</td>
+<td>Admin</td>
+<td>Oct 10, 2023</td>
+<td>1,200</td>
+<td><span class="active-user">Published</span></td>
+</tr>
+
+<tr>
+<td>Beginner's Guide to Yoga</td>
+<td>Admin</td>
+<td>Oct 08, 2023</td>
+<td>850</td>
+<td><span class="active-user">Published</span></td>
+</tr>
+
+<tr>
+<td>Mental Health Awareness</td>
+<td>Guest</td>
+<td>Oct 05, 2023</td>
+<td>2,340</td>
+<td><span class="active-user">Published</span></td>
+</tr>
+
+<tr>
+<td>Benefits of Hydration</td>
+<td>Admin</td>
+<td>Oct 01, 2023</td>
+<td>1,050</td>
+<td><span class="active-user">Published</span></td>
+</tr>
+
+<tr>
+<td>Home Workout Routines</td>
+<td>Guest</td>
+<td>Sep 28, 2023</td>
+<td>3,100</td>
+<td><span class="inactive-user">Draft</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- Testimonials -->
+<div class="activity-card" style="margin-top: 30px;">
+
+<h2>Recent Testimonials</h2>
+
+<ul>
+
+<li>
+"This service completely changed my life! Highly recommend." - Sarah K.
+</li>
+
+<li>
+"Great support and amazing diet plans." - Mike T.
+</li>
+
+<li>
+"I feel much healthier and energetic now." - Jessica R.
+</li>
+
+<li>
+"The workout routines are easy to follow and very effective." - David L.
+</li>
+
+<li>
+"Best wellness program I have ever joined!" - Emma W.
+</li>
+
+</ul>
+
+</div>
+
+<!-- Messages -->
+<div class="table-card" style="margin-top: 30px;">
+
+<h2>Recent Messages</h2>
+
+<table>
+
+<tr>
+<th>Sender</th>
+<th>Subject</th>
+<th>Date</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>Alice Brown</td>
+<td>Inquiry about Pricing</td>
+<td>Oct 11, 2023</td>
+<td><button style="padding: 5px 10px; border:none; background:var(--primary); color:white; border-radius:5px; cursor:pointer;">Reply</button></td>
+</tr>
+
+<tr>
+<td>Bob Martin</td>
+<td>Support Needed</td>
+<td>Oct 10, 2023</td>
+<td><button style="padding: 5px 10px; border:none; background:var(--primary); color:white; border-radius:5px; cursor:pointer;">Reply</button></td>
+</tr>
+
+<tr>
+<td>Charlie Davis</td>
+<td>Feedback</td>
+<td>Oct 09, 2023</td>
+<td><button style="padding: 5px 10px; border:none; background:var(--primary); color:white; border-radius:5px; cursor:pointer;">Reply</button></td>
+</tr>
+
+<tr>
+<td>Diana Prince</td>
+<td>Partnership Request</td>
+<td>Oct 08, 2023</td>
+<td><button style="padding: 5px 10px; border:none; background:var(--primary); color:white; border-radius:5px; cursor:pointer;">Reply</button></td>
+</tr>
+
+<tr>
+<td>Evan Wright</td>
+<td>Account Issue</td>
+<td>Oct 07, 2023</td>
+<td><button style="padding: 5px 10px; border:none; background:var(--primary); color:white; border-radius:5px; cursor:pointer;">Reply</button></td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- Settings -->
+<div class="activity-card" style="margin-top: 30px;">
+
+<h2>Quick Settings</h2>
+
+<ul>
+
+<li>
+⚙️ Enable Email Notifications
+</li>
+
+<li>
+⚙️ Allow User Registrations
+</li>
+
+<li>
+⚙️ Auto-Approve Testimonials
+</li>
+
+<li>
+⚙️ Maintenance Mode
+</li>
+
+<li>
+⚙️ Dark Mode Interface
+</li>
+
+</ul>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
