@@ -41,6 +41,10 @@ color:var(--primary);
 margin-bottom:40px;
 }
 
+.logo img {
+filter: brightness(0) invert(1);
+}
+
 .logo i{
 margin-right:10px;
 }
@@ -58,12 +62,6 @@ border-radius:12px;
 cursor:pointer;
 transition:.3s;
 }
-
-.sidebar ul li:hover,
-.sidebar ul .active{
-background:var(--primary);
-}
-
 .sidebar ul li i{
 margin-right:12px;
 }
@@ -574,3 +572,4 @@ table {
         grid-template-columns: 1fr !important;
     }
 }
+
