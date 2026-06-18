@@ -63,14 +63,22 @@ Settings
 Logout
 </li>
 </ul>
+<button class="close-sidebar" onclick="closeSidebar()"><i class="fas fa-times"></i></button>
 </aside>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
 <!-- Main -->
 
 <main class="main-content">
 <div class="topbar">
 <i class="fas fa-bars dashboard-menu-btn" style="display:none; font-size: 24px; color: var(--primary); cursor: pointer; margin-right: 15px;"></i>
-<div>
+
+<a href="index.html" class="topbar-mobile-logo">
+<img src="./assets/logo.webp" alt="Logo" style="height: 40px; width: auto; filter: brightness(0) invert(50%) sepia(80%) saturate(340%) hue-rotate(120deg) brightness(85%) contrast(110%);">
+</a>
+
+<div class="topbar-welcome">
 <h1>Messages</h1>
 <p>View client inquiries and support messages.</p>
 </div>
@@ -93,6 +101,15 @@ Logout
 </main>
 
 </div>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="mobile-bottom-nav">
+  <a href="admin-dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+  <a href="admin-users.html"><i class="fas fa-users"></i> Users</a>
+  <a href="admin-appointments.html"><i class="fas fa-calendar-check"></i> Appts</a>
+  <a href="admin-blogs.html"><i class="fas fa-blog"></i> Blogs</a>
+  <a href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a>
+</nav>
 
 <script src="js/main.js"></script>
 

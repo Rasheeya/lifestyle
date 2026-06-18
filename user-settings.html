@@ -58,14 +58,22 @@ Settings
 Logout
 </li>
 </ul>
+<button class="close-sidebar" onclick="closeSidebar()"><i class="fas fa-times"></i></button>
 </aside>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
 <!-- Main Content -->
 
 <main class="main-content">
 <div class="topbar">
 <i class="fas fa-bars dashboard-menu-btn" style="display:none; font-size: 24px; color: var(--primary); cursor: pointer; margin-right: 15px;"></i>
-<div>
+
+<a href="index.html" class="topbar-mobile-logo">
+<img src="./assets/logo.webp" alt="Logo" style="height: 40px; width: auto; filter: brightness(0) invert(50%) sepia(80%) saturate(340%) hue-rotate(120deg) brightness(85%) contrast(110%);">
+</a>
+
+<div class="topbar-welcome">
 <h1>Account Settings</h1>
 <p>Manage your account preferences and security.</p>
 </div>
@@ -97,6 +105,15 @@ Logout
 </main>
 
 </div>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="mobile-bottom-nav">
+  <a href="user-dashboard.html"><i class="fas fa-home"></i> Home</a>
+  <a href="user-appointments.html"><i class="fas fa-calendar-check"></i> Appts</a>
+  <a href="user-programs.html"><i class="fas fa-dumbbell"></i> Programs</a>
+  <a href="user-progress.html"><i class="fas fa-chart-line"></i> Progress</a>
+  <a href="user-settings.html" class="active"><i class="fas fa-cog"></i> Settings</a>
+</nav>
 
 <script src="js/main.js"></script>
 

@@ -609,22 +609,36 @@ document.querySelectorAll('.menu-toggle').forEach(toggle => {
 });
 
 
-// Mobile Dashboard Menu
+// Mobile Dashboard Sidebar
 const dashMenuBtn = document.querySelector('.dashboard-menu-btn');
 const sidebar = document.querySelector('.sidebar');
-const closeSidebarBtn = document.querySelector('.close-sidebar');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
 
-if (dashMenuBtn && sidebar) {
-    dashMenuBtn.addEventListener('click', () => {
-        sidebar.classList.add('active');
-    });
+function openSidebar() {
+    if (sidebar) sidebar.classList.add('active');
+    if (sidebarOverlay) sidebarOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
-if (closeSidebarBtn && sidebar) {
-    closeSidebarBtn.addEventListener('click', () => {
-        sidebar.classList.remove('active');
-    });
+function closeSidebar() {
+    if (sidebar) sidebar.classList.remove('active');
+    if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+    document.body.style.overflow = '';
 }
+
+if (dashMenuBtn) {
+    dashMenuBtn.addEventListener('click', openSidebar);
+}
+
+// Close sidebar when clicking outside (overlay)
+if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', closeSidebar);
+}
+
+// Close on ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSidebar();
+});
 
 // Video Testimonials Player
 document.querySelectorAll('.video-card').forEach(card => {
